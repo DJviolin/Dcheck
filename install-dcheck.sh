@@ -63,7 +63,7 @@ dcheck:
     - "2222:22"
   volumes:
     - $HOME/dcheck:/root/dcheck/:rw
-  command: /bin/bash -c /root/dcheck/repo/dcheck.sh
+  command: /usr/sbin/sshd -D && /root/dcheck/repo/dcheck.sh
 EOF
 cat $INSTALL_DIR/repo/docker-compose.yml
 chmod +x $INSTALL_DIR/repo/docker-compose.yml
@@ -153,7 +153,7 @@ Run docker-compose with:\n\
 Build the image with:\n\
   $ docker build --rm -t dcheck $INSTALL_DIR/repo\n\
 Run the systemd service with:\n\
-  $ cd $INSTALL_DIR/repo && chmod +x service-start.sh && ./service-start.sh\n\
+  $ cd $INSTALL_DIR/repo && ./service-start.sh\n\
 Stop the systemd service with:\n\
-  $ cd $INSTALL_DIR/repo && chmod +x service-stop.sh && ./service-stop.sh"
+  $ cd $INSTALL_DIR/repo && ./service-stop.sh"
 echo -e "\nAll done! Exiting..."
