@@ -14,6 +14,7 @@ RUN apt-get -y update && apt-get -y dist-upgrade \
         dialog \
         apt-utils \
         sudo \
+        supervisor \
         openssh-server \
         whois \
         jwhois \
@@ -33,4 +34,5 @@ RUN rm -rf /var/lib/apt/lists/*
 
 EXPOSE 22
 
-CMD ["/usr/sbin/sshd", "-D"]
+COPY etc/supervisor/conf.d/supervisord.conf /etc/supervisor/conf.d/
+CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/supervisord.conf"]

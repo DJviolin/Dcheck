@@ -63,7 +63,6 @@ dcheck:
     - "2222:22"
   volumes:
     - $HOME/dcheck:/root/dcheck/:rw
-  command: /usr/sbin/sshd -D && /root/dcheck/repo/dcheck.sh
 EOF
 cat $INSTALL_DIR/repo/docker-compose.yml
 chmod +x $INSTALL_DIR/repo/docker-compose.yml
