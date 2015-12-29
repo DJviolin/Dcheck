@@ -115,8 +115,6 @@ echo -e "\nCreating: $INSTALL_DIR/repo/dcheck.sh\n"
 cat <<EOF > $INSTALL_DIR/repo/dcheck.sh
 #!/bin/bash
 
-set -e
-
 REGISTERED=\$HOME/dcheck/files/registered.txt
 AVAILABLE=\$HOME/dcheck/files/available.txt
 DOMAINS=\$HOME/dcheck/files/domains.txt
