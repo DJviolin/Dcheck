@@ -30,6 +30,7 @@ if test "$(ls -A "$INSTALL_DIR/repo")"; then
     echo -e "\nCloning git repo into \"$INSTALL_DIR/repo\":"
     cd $INSTALL_DIR/repo
     git clone https://github.com/DJviolin/Dcheck.git $INSTALL_DIR/repo
+    chmod +x $INSTALL_DIR/repo/service-start.sh $INSTALL_DIR/repo/service-stop.sh
     echo -e "\nShowing working directory..."
     ls -al $INSTALL_DIR/repo
   else
@@ -39,6 +40,7 @@ else
   echo -e "\nCloning git repo into \"$INSTALL_DIR/repo\":"
   cd $INSTALL_DIR/repo
   git clone https://github.com/DJviolin/Dcheck.git $INSTALL_DIR/repo
+  chmod +x $INSTALL_DIR/repo/service-start.sh $INSTALL_DIR/repo/service-stop.sh
   echo -e "Showing working directory..."
   ls -al $INSTALL_DIR/repo
 fi
@@ -61,6 +63,7 @@ dcheck:
     - "2222:22"
   volumes:
     - $HOME/dcheck:/root/dcheck/:rw
+  command: /root/dcheck/repo/dcheck.sh
 EOF
 cat $INSTALL_DIR/repo/docker-compose.yml
 chmod +x $INSTALL_DIR/repo/docker-compose.yml
