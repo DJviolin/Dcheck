@@ -29,7 +29,6 @@ $ docker build --rm -t dcheck $HOME/dcheck/repo
 Start the Systemd service:
 
 ```
-$ chmod +x ~/dcheck/repo/service-start.sh ~/dcheck/repo/service-stop.sh
 $ cd ~/dcheck/repo
 $ ./service-start.sh
 ```
@@ -37,7 +36,6 @@ $ ./service-start.sh
 Running Domain Checker:
 
 ```
-$ chmod +x ~/dcheck/jwhois
 $ cd ~/dcheck
 $ ./jwhois
 ```
@@ -45,7 +43,6 @@ $ ./jwhois
 Running Crunch Random List generator:
 
 ```
-$ chmod +x ~/dcheck/crunch
 $ cd ~/dcheck
 $ ./crunch "1 6 0123456789 -o /root/dcheck/files-crunch/000000.txt"
 ```
