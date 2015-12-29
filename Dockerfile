@@ -33,5 +33,4 @@ RUN rm -rf /var/lib/apt/lists/*
 
 EXPOSE 22
 
-ENTRYPOINT ["/bin/bash", "-c"]
 CMD ["/usr/sbin/sshd", "-D"]
