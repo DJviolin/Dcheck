@@ -20,11 +20,6 @@ RUN apt-get -y update && apt-get -y dist-upgrade \
         jwhois \
         crunch
 
-# forward request and error logs to docker log collector
-RUN mkdir -p /var/log/dcheck \
-    && ln -sf /dev/stdout /var/log/dcheck/access.log \
-    && ln -sf /dev/stderr /var/log/dcheck/error.log
-
 ### Start of OpenSSH setup
 #RUN mkdir /var/run/sshd
 #RUN mkdir /root/.ssh
