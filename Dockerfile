@@ -14,8 +14,8 @@ RUN apt-get -y update && apt-get -y dist-upgrade \
         #dialog \
         #apt-utils \
         #sudo \
-        #supervisor \
         #openssh-server \
+        supervisor \
         whois \
         jwhois \
         crunch
