@@ -60,6 +60,7 @@ dcheck:
   build: .
   container_name: repo_dcheck
   volumes:
+    - ./etc/supervisor/conf.d/supervisord.conf:/etc/supervisor/conf.d/supervisord.conf:ro
     - $HOME/dcheck:/root/dcheck/:rw
 EOF
 cat $INSTALL_DIR/repo/docker-compose.yml
