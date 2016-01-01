@@ -128,6 +128,8 @@ cat /dev/null >> \$GREPINPUT \\
 && cat \$DOMAINSDIFF > \$DOMAINS \\
 && rm -rf \$GREPINPUT \$DOMAINSDIFF
 
+#awk 'FNR==NR { a[\$0]; next } !(\$0 in a)' \$GREPINPUT \$DOMAINS > \$DOMAINSDIFF
+
 while read -r domain; do
   MATCH=\$(jwhois --force-lookup --disable-cache --no-redirect -c jwhois.conf "\$domain\$TLD" | grep -oPa '^.*\b(Transferred Date|Updated Date|Creation Date|Registration Date|Expiration Date|Expiry Date)\b.*\$')
   if [ \$? -eq 0 ]; then
