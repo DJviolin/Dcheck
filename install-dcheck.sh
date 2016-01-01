@@ -147,8 +147,6 @@ echo -e "\n
 Dcheck has successfully built!\n\n\
 Run docker-compose with:\n\
   $ docker-compose --file $INSTALL_DIR/repo/docker-compose.yml build\n\
-Build the image with:\n\
-  $ docker build --rm -t dcheck $INSTALL_DIR/repo\n\
 Run the systemd service with:\n\
   $ cd $INSTALL_DIR/repo && ./service-start.sh\n\
 Stop the systemd service with:\n\
