@@ -126,8 +126,7 @@ cat /dev/null >> \$GREPINPUT \\
 && grep -oPa --no-filename '^.*(?=(\.com))' \$AVAILABLE \$REGISTERED > \$GREPINPUT \\
 && awk 'FNR==NR { a[\$0]; next } !(\$0 in a)' \$GREPINPUT \$DOMAINS > \$DOMAINSDIFF \\
 && cat \$DOMAINSDIFF > \$DOMAINS \\
-&& rm -rf \$GREPINPUT \\
-&& rm -rf \$DOMAINSDIFF
+&& rm -rf \$GREPINPUT \$DOMAINSDIFF
 
 while read -r domain; do
   MATCH=\$(jwhois --force-lookup --disable-cache --no-redirect -c jwhois.conf "\$domain\$TLD" | grep -oPa '^.*\b(Transferred Date|Updated Date|Creation Date|Registration Date|Expiration Date|Expiry Date)\b.*\$')
