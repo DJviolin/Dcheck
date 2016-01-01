@@ -40,6 +40,12 @@ $ cd ~/dcheck
 $ ./jwhois
 ```
 
+Checking Dcheck log:
+
+```
+$ docker exec -it repo_dcheck /bin/bash -c 'tail /var/log/supervisord/dcheck-stdout.log -n 50'
+```
+
 Running Crunch Random List generator:
 
 ```
