@@ -43,7 +43,7 @@ $ ./jwhois
 Checking Dcheck log:
 
 ```
-$ docker exec -it repo_dcheck /bin/bash -c 'tail -f /var/log/supervisord/dcheck-stdout.log -n 50'
+$ docker exec -it repo_dcheck /bin/bash -c 'tail -f /var/log/supervisord/dcheck-stdout.log'
 ```
 
 Running Crunch Random List generator:
