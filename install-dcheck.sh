@@ -59,8 +59,6 @@ cat <<EOF > $INSTALL_DIR/repo/docker-compose.yml
 dcheck:
   build: .
   container_name: repo_dcheck
-  ports:
-    - "2222:22"
   volumes:
     - $HOME/dcheck:/root/dcheck/:rw
 EOF
