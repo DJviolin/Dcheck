@@ -124,7 +124,6 @@ TLD='.com'
 cat /dev/null >> \$GREPINPUT \\
 && cat /dev/null >> \$DOMAINSDIFF \\
 && grep -oPa --no-filename '^.*(?=(\.com))' \$AVAILABLE \$REGISTERED > \$GREPINPUT \\
-#&& awk 'FNR==NR { a[\$0]; next } !(\$0 in a)' \$GREPINPUT \$DOMAINS > \$DOMAINSDIFF \\
 && grep -Fxvf \$GREPINPUT \$DOMAINS > \$DOMAINSDIFF \\
 && cat \$DOMAINSDIFF > \$DOMAINS \\
 && rm -rf \$GREPINPUT \$DOMAINSDIFF
