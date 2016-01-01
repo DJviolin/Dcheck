@@ -23,7 +23,7 @@ $ rm -rf $HOME/install-dcheck.sh
 Build the image:
 
 ```
-$ docker build --rm -t dcheck $HOME/dcheck/repo
+$ docker-compose --file ~/dcheck/repo/docker-compose.yml build
 ```
 
 Start the Systemd service:
