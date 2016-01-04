@@ -40,13 +40,6 @@ $ cd ~/dcheck/repo
 $ ./service-stop.sh
 ```
 
-Running Domain Checker:
-
-```
-$ cd ~/dcheck/repo
-$ ./jwhois
-```
-
 Checking Dcheck log:
 
 ```
@@ -58,6 +51,13 @@ Running Crunch Random List generator:
 ```
 $ cd ~/dcheck/repo
 $ ./crunch "1 6 0123456789 -o /root/dcheck/files-crunch/000000.txt"
+```
+
+Although not the recommended method, but it's possible to run Dcheck without any service:
+
+```
+$ cd ~/dcheck/repo
+$ ./jwhois
 ```
 
 Update frequently the jwhois.conf from [here](https://raw.githubusercontent.com/jonasob/jwhois/master/example/jwhois.conf).
