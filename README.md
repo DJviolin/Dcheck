@@ -11,7 +11,7 @@
 ## Installation
 
 ```
-$ curl -L https://raw.github.com/DJviolin/Dcheck/master/install.sh > $HOME/install-dcheck.sh
+$ curl -L https://raw.github.com/DJviolin/Dcheck/master/install-dcheck.sh > $HOME/install-dcheck.sh
 $ chmod +x $HOME/install-dcheck.sh
 $ cd $HOME
 $ ./install-dcheck.sh
@@ -33,10 +33,17 @@ $ cd ~/dcheck/repo
 $ ./service-start.sh
 ```
 
+Stop the Systemd service:
+
+```
+$ cd ~/dcheck/repo
+$ ./service-stop.sh
+```
+
 Running Domain Checker:
 
 ```
-$ cd ~/dcheck
+$ cd ~/dcheck/repo
 $ ./jwhois
 ```
 
@@ -49,14 +56,8 @@ $ docker exec -it repo_dcheck /bin/bash -c 'tail -f /var/log/supervisord/dcheck-
 Running Crunch Random List generator:
 
 ```
-$ cd ~/dcheck
+$ cd ~/dcheck/repo
 $ ./crunch "1 6 0123456789 -o /root/dcheck/files-crunch/000000.txt"
-```
-
-Testing container:
-
-```
-$ docker run --rm -it --name dcheck -v $HOME/dcheck:/root/dcheck/:rw dcheck
 ```
 
 Update frequently the jwhois.conf from [here](https://raw.githubusercontent.com/jonasob/jwhois/master/example/jwhois.conf).
